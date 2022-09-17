@@ -1,1 +1,1 @@
-# lab-java-mysql
+# lab-java-mysql8

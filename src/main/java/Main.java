@@ -16,16 +16,16 @@ public class Main {
 
     private void run() throws SQLException, ClassNotFoundException {
 
-        Class.forName("com.mysql.jdbc.Driver");
+        Class.forName("com.mysql.cj.jdbc.Driver");
 
         Connection connection = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/db_example?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true",
-                "springuser",
-                "ThePassword");
+                "jdbc:mysql://10.0.1.12:3306/db_example?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true",
+                "dbuser",
+                "password");
 
         Statement statement = connection.createStatement();
 
-        ResultSet resultSet = statement.executeQuery("SELECT * FROM db_example.vehicles");
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM db_example.vehicle");
 
         System.out.println("Printing schema for table: " + resultSet.getMetaData().getTableName(1));
 
